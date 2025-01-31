@@ -1,0 +1,136 @@
+body {
+
+    background-color: black;
+    color: whitesmoke;
+}
+
+form {
+
+    width: 300px;
+    height: 500px;
+    margin-left:auto;
+    margin-right: auto;
+    border:1px solid whitesmoke;
+    padding: 20px;
+    border-radius: 0px;
+
+}
+
+h2 {
+
+    text-align: center;
+    margin-bottom: 15px;
+    color: azure;
+
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+input {
+
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    background: #f1f1f1;
+
+}
+input:hover{
+    background-color: #ddd;
+   
+}
+
+label {
+
+    color:whitesmoke;
+    font-size: 18px;
+    padding: 10px;
+}
+
+button {
+
+    background: rgb(35, 174, 202);
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.7;
+}
+
+button:hover{
+
+    opacity: 1;
+
+}
+
+.error {
+
+   background: black;
+   color: red;
+   padding: 10px;
+   width: 95%;
+   margin: 3px auto;
+   margin-top: -10px;
+
+}
+
+#title {
+
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+#l1
+{   
+    margin-left: 90px;
+    color: rgb(245, 3, 245);
+    
+}
+#l2
+{
+    color:blue;
+}
+#l3
+{
+    color: rgb(7, 247, 7);
+}
+#l4
+{
+    color:yellow;
+}
+#l5
+{
+    color: orange;
+}
+#l6
+{
+    color: red;
+}
+a{
+    text-decoration: none;
+}
+#signup
+{
+    color: rgb(18, 218, 18);
+}
+#reset
+{
+    color: red;
+}
+p{
+    text-align: center;
+}
+#ast
+{
+    color: red;
+}
+.css
+{
+    color:orange;
+}

@@ -1,0 +1,99 @@
+body {
+  background: black;
+  color: azure;
+}
+
+.container {
+  padding: 16px;
+  width: 300px;
+  margin-left:auto;
+  margin-right: auto;
+  border:1px solid whitesmoke;
+}
+
+.form_error span {
+  width: 80%;
+  height: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+ margin-bottom: 30px;
+  font-size: 1em;
+  color: #D83D5A;
+ 
+}
+
+#reg_btn {
+  height: 35px;
+  width: 80%;
+  margin: 30px 10%;
+  color: white;
+  background: #04AA6D;
+  border: none;
+  border-radius: 0px;
+  opacity: 0.9;
+}
+h1{
+  display: inline;
+  letter-spacing: -4px;
+}
+#l1
+{   
+  margin-left: 85px;
+  color: rgb(245, 3, 245);
+  
+}
+#l2
+{
+  color:blue;
+}
+#l3
+{
+  color: rgb(7, 247, 7);
+}
+#l4
+{
+  color:yellow;
+}
+#l5
+{
+  color: orange;
+}
+#l6
+{
+  color: red;
+}
+#title
+{
+  padding-bottom: 3px;
+}
+p
+{
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+#ast
+{
+  color: red;
+}
+#reg_btn:hover
+{
+  opacity: 1;
+}

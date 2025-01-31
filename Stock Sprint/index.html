@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Sprint @ E-SUMMIT</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999; /* Ensure header is on top */
+  }
+
+  .logo {
+    color : white;
+    background-image: url('logo.png');
+    background-size: contain; /* Adjust as needed */
+    background-repeat: no-repeat; /* Adjust as needed */
+    padding-left: 40px; /* Adjust as needed to create space for the image */
+}
+
+  #wallet-icon {
+    font-size: 24px;
+    color:gold;
+    position: absolute;
+    top: 10px;
+    right: 90px; /* Adjust as needed */
+  }
+  #money-left {
+    position: absolute;
+    color:white;
+    top: 10px;
+    right: 40px; /* Adjust as needed */
+  }
+  main {
+    padding-top: 70px; /* Adjust according to header height */
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #0f0e0e;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  p {
+     margin-top: 80px;
+     text-align: center;
+     font-size : 24px;
+  }
+  .submit-button {
+    display: block;
+    margin: 20px auto 0; /* Updated to center vertically and horizontally */
+  }
+  h1 {
+  font-size: 30px; /* Adjust as needed */
+  color: #fff; /* Target text color */
+  text-shadow:
+    0px 0px 5px rgba(255, 0, 0, 0.8), /* Red shadow */
+    4px 0px 5px rgba(0, 255, 0, 0.8); /* Green shadow */
+
+    margin-right: 100px;
+}
+
+.image-container {
+            width: 700px; /* Adjust width as needed */
+            height: 700px; /* Adjust height as needed */
+            overflow: hidden; /* Optional: Hide overflow */
+            margin:auto;
+        }
+
+        .image-container img {
+            width: 100%; /* Make the image fill the div */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Stock Sprint</h1>
+  <i id="wallet-icon" class="fas fa-wallet"></i>
+  <span id="money-left">$1000</span>
+</header>
+
+<main>
+  <div id=1>
+    <p class="section">March-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="1-company1-prev-value">$0</td>
+          <td id="1-company1-value">$10</td>
+          <td id="1-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('1-company1', 1)">+</button>
+            <button onclick="sellShare('1-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="1-company2-name">Reliable Industries(RI)</td>
+          <td id="1-company2-prev-value">$0</td>
+          <td id="1-company2-value">$30</td>
+          <td id="1-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('1-company2', 1)">+</button>
+            <button onclick="sellShare('1-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="1-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="1-company3-prev-value">$0</td>
+          <td id="1-company3-value">$15</td>
+          <td id="1-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('1-company3', 1)">+</button>
+            <button onclick="sellShare('1-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="1-company4-name">Travel Ease</td>
+          <td id="1-company4-prev-value">$0</td>
+          <td id="1-company4-value">$20</td>
+          <td id="1-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('1-company4', 1)">+</button>
+            <button onclick="sellShare('1-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="1-company5-name">WebNet Systems(WNS)</td>
+          <td id="1-company5-prev-value">$0</td>
+          <td id="1-company5-value">$25</td>
+          <td id="1-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('1-company5', 1)">+</button>
+            <button onclick="sellShare('1-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(1)">Submit</button>
+  </div>
+
+  <div id=2 style="display: none;">
+    <p class="section">April-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="2-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="2-company1-prev-value">$10</td>
+          <td id="2-company1-value">$12</td>
+          <td id="2-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('2-company1', 1)">+</button>
+            <button onclick="sellShare('2-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="2-company2-name">Reliable Industries(RI)</td>
+          <td id="2-company2-prev-value">$30</td>
+          <td id="2-company2-value">$31</td>
+          <td id="2-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('2-company2', 1)">+</button>
+            <button onclick="sellShare('2-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="2-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="2-company3-prev-value">$15</td>
+          <td id="2-company3-value">$16</td>
+          <td id="2-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('2-company3', 1)">+</button>
+            <button onclick="sellShare('2-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="2-company4-name">Travel Ease</td>
+          <td id="2-company4-prev-value">$20</td>
+          <td id="2-company4-value">$21</td>
+          <td id="2-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('2-company4', 1)">+</button>
+            <button onclick="sellShare('2-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="2-company5-name">WebNet Systems(WNS)</td>
+          <td id="2-company5-prev-value">$25</td>
+          <td id="2-company5-value">$28</td>
+          <td id="2-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('2-company5', 1)">+</button>
+            <button onclick="sellShare('2-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(2)">Submit</button>
+  </div>
+  <div id=3 style="display: none;">
+    <p class="section">May-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="3-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="3-company1-prev-value">$12</td>
+          <td id="3-company1-value">$15</td>
+          <td id="3-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('3-company1', 1)">+</button>
+            <button onclick="sellShare('3-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="3-company2-name">Reliable Industries(RI)</td>
+          <td id="3-company2-prev-value">$31</td>
+          <td id="3-company2-value">$32</td>
+          <td id="3-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('3-company2', 1)">+</button>
+            <button onclick="sellShare('3-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="3-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="3-company3-prev-value">$16</td>
+          <td id="3-company3-value">$17</td>
+          <td id="3-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('3-company3', 1)">+</button>
+            <button onclick="sellShare('3-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="3-company4-name">Travel Ease</td>
+          <td id="3-company4-prev-value">$21</td>
+          <td id="3-company4-value">$22</td>
+          <td id="3-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('3-company4', 1)">+</button>
+            <button onclick="sellShare('3-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="3-company5-name">WebNet Systems(WNS)</td>
+          <td id="3-company5-prev-value">$28</td>
+          <td id="3-company5-value">$32</td>
+          <td id="3-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('3-company5', 1)">+</button>
+            <button onclick="sellShare('3-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(3)">Submit</button>
+  </div>
+
+  <div id=4 style="display: none;">
+    <p class="section">June-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="4-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="4-company1-prev-value">$15</td>
+          <td id="4-company1-value">$18</td>
+          <td id="4-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('4-company1', 1)">+</button>
+            <button onclick="sellShare('4-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="4-company2-name">Reliable Industries(RI)</td>
+          <td id="4-company2-prev-value">$32</td>
+          <td id="4-company2-value">$33</td>
+          <td id="4-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('4-company2', 1)">+</button>
+            <button onclick="sellShare('4-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="4-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="4-company3-prev-value">$17</td>
+          <td id="4-company3-value">$18</td>
+          <td id="4-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('4-company3', 1)">+</button>
+            <button onclick="sellShare('4-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="4-company4-name">Travel Ease</td>
+          <td id="4-company4-prev-value">$22</td>
+          <td id="4-company4-value">$23</td>
+          <td id="4-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('4-company4', 1)">+</button>
+            <button onclick="sellShare('4-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="4-company5-name">WebNet Systems(WNS)</td>
+          <td id="4-company5-prev-value">$32</td>
+          <td id="4-company5-value">$38</td>
+          <td id="4-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('4-company5', 1)">+</button>
+            <button onclick="sellShare('4-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(4)">Submit</button>
+  </div>
+
+  <div id=5 style="display: none;">
+    <p class="section">July-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="5-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="5-company1-prev-value">$18</td>
+          <td id="5-company1-value">$22</td>
+          <td id="5-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('5-company1', 1)">+</button>
+            <button onclick="sellShare('5-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="5-company2-name">Reliable Industries(RI)</td>
+          <td id="5-company2-prev-value">$33</td>
+          <td id="5-company2-value">$34</td>
+          <td id="5-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('5-company2', 1)">+</button>
+            <button onclick="sellShare('5-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="5-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="5-company3-prev-value">$18</td>
+          <td id="5-company3-value">$19</td>
+          <td id="5-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('5-company3', 1)">+</button>
+            <button onclick="sellShare('5-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="5-company4-name">Travel Ease</td>
+          <td id="5-company4-prev-value">$23</td>
+          <td id="5-company4-value">$24</td>
+          <td id="5-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('5-company4', 1)">+</button>
+            <button onclick="sellShare('5-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="5-company5-name">WebNet Systems(WNS)</td>
+          <td id="5-company5-prev-value">$38</td>
+          <td id="5-company5-value">$45</td>
+          <td id="5-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('5-company5', 1)">+</button>
+            <button onclick="sellShare('5-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(5)">Submit</button>
+  </div>
+
+  <div id=6 style="display: none;">
+    <p class="section">August-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="6-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="6-company1-prev-value">$22</td>
+          <td id="6-company1-value">$28</td>
+          <td id="6-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('6-company1', 1)">+</button>
+            <button onclick="sellShare('6-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="6-company2-name">Reliable Industries(RI)</td>
+          <td id="6-company2-prev-value">$34</td>
+          <td id="6-company2-value">$35</td>
+          <td id="6-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('6-company2', 1)">+</button>
+            <button onclick="sellShare('6-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="6-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="6-company3-prev-value">$19</td>
+          <td id="6-company3-value">$20</td>
+          <td id="6-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('6-company3', 1)">+</button>
+            <button onclick="sellShare('6-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="6-company4-name">Travel Ease</td>
+          <td id="6-company4-prev-value">$24</td>
+          <td id="6-company4-value">$25</td>
+          <td id="6-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('6-company4', 1)">+</button>
+            <button onclick="sellShare('6-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="6-company5-name">WebNet Systems(WNS)</td>
+          <td id="6-company5-prev-value">$45</td>
+          <td id="6-company5-value">$55</td>
+          <td id="6-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('6-company5', 1)">+</button>
+            <button onclick="sellShare('6-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(6)">Submit</button>
+  </div>
+
+  <div id=7 style="display: none;">
+    <p class="section">September-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="7-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="7-company1-prev-value">$28</td>
+          <td id="7-company1-value">$35</td>
+          <td id="7-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('7-company1', 1)">+</button>
+            <button onclick="sellShare('7-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="7-company2-name">Reliable Industries(RI)</td>
+          <td id="7-company2-prev-value">$35</td>
+          <td id="7-company2-value">$36</td>
+          <td id="7-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('7-company2', 1)">+</button>
+            <button onclick="sellShare('7-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="7-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="7-company3-prev-value">$20</td>
+          <td id="7-company3-value">$21</td>
+          <td id="7-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('7-company3', 1)">+</button>
+            <button onclick="sellShare('7-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="7-company4-name">Travel Ease</td>
+          <td id="7-company4-prev-value">$25</td>
+          <td id="7-company4-value">$26</td>
+          <td id="7-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('7-company4', 1)">+</button>
+            <button onclick="sellShare('7-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="7-company5-name">WebNet Systems(WNS)</td>
+          <td id="7-company5-prev-value">$55</td>
+          <td id="7-company5-value">$65</td>
+          <td id="7-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('7-company5', 1)">+</button>
+            <button onclick="sellShare('7-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(7)">Submit</button>
+  </div>
+
+  <div id=8 style="display: none;">
+    <p class="section">October-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="8-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="8-company1-prev-value">$35</td>
+          <td id="8-company1-value">$45</td>
+          <td id="8-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('8-company1', 1)">+</button>
+            <button onclick="sellShare('8-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="8-company2-name">Reliable Industries(RI)</td>
+          <td id="8-company2-prev-value">$36</td>
+          <td id="8-company2-value">$37</td>
+          <td id="8-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('8-company2', 1)">+</button>
+            <button onclick="sellShare('8-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="8-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="8-company3-prev-value">$21</td>
+          <td id="8-company3-value">$22</td>
+          <td id="8-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('8-company3', 1)">+</button>
+            <button onclick="sellShare('8-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="8-company4-name">Travel Ease</td>
+          <td id="8-company4-prev-value">$26</td>
+          <td id="8-company4-value">$27</td>
+          <td id="8-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('8-company4', 1)">+</button>
+            <button onclick="sellShare('8-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="8-company5-name">WebNet Systems(WNS)</td>
+          <td id="8-company5-prev-value">$65</td>
+          <td id="8-company5-value">$78</td>
+          <td id="8-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('8-company5', 1)">+</button>
+            <button onclick="sellShare('8-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(8)">Submit</button>
+  </div>
+
+  <div id=9 style="display: none;">
+    <p class="section">November-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="9-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="9-company1-prev-value">$45</td>
+          <td id="9-company1-value">$58</td>
+          <td id="9-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('9-company1', 1)">+</button>
+            <button onclick="sellShare('9-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="9-company2-name">Reliable Industries(RI)</td>
+          <td id="9-company2-prev-value">$37</td>
+          <td id="9-company2-value">$38</td>
+          <td id="9-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('9-company2', 1)">+</button>
+            <button onclick="sellShare('9-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="9-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="9-company3-prev-value">$22</td>
+          <td id="9-company3-value">$23</td>
+          <td id="9-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('9-company3', 1)">+</button>
+            <button onclick="sellShare('9-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="9-company4-name">Travel Ease</td>
+          <td id="9-company4-prev-value">$27</td>
+          <td id="9-company4-value">$25</td>
+          <td id="9-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('9-company4', 1)">+</button>
+            <button onclick="sellShare('9-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="9-company5-name">WebNet Systems(WNS)</td>
+          <td id="9-company5-prev-value">$78</td>
+          <td id="9-company5-value">$85</td>
+          <td id="9-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('9-company5', 1)">+</button>
+            <button onclick="sellShare('9-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(9)">Submit</button>
+  </div>
+
+  <div id=10 style="display: none;">
+    <p class="section">December-99</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="10-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="10-company1-prev-value">$58</td>
+          <td id="10-company1-value">$72</td>
+          <td id="10-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('10-company1', 1)">+</button>
+            <button onclick="sellShare('10-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="10-company2-name">Reliable Industries(RI)</td>
+          <td id="10-company2-prev-value">$38</td>
+          <td id="10-company2-value">$39</td>
+          <td id="10-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('10-company2', 1)">+</button>
+            <button onclick="sellShare('10-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="10-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="10-company3-prev-value">$23</td>
+          <td id="10-company3-value">$24</td>
+          <td id="10-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('10-company3', 1)">+</button>
+            <button onclick="sellShare('10-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="10-company4-name">Travel Ease</td>
+          <td id="10-company4-prev-value">$25</td>
+          <td id="10-company4-value">$23</td>
+          <td id="10-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('10-company4', 1)">+</button>
+            <button onclick="sellShare('10-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="10-company5-name">WebNet Systems(WNS)</td>
+          <td id="10-company5-prev-value">$85</td>
+          <td id="10-company5-value">$0</td>
+          <td id="10-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('10-company5', 1)">+</button>
+            <button onclick="sellShare('10-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(10)">Submit</button>
+  </div>
+
+  <div id=11  style="display: none;">
+    <p class="section">January-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="11-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="11-company1-prev-value">$72</td>
+          <td id="11-company1-value">$55</td>
+          <td id="11-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('11-company1', 1)">+</button>
+            <button onclick="sellShare('11-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="11-company2-name">Reliable Industries(RI)</td>
+          <td id="11-company2-prev-value">$39</td>
+          <td id="11-company2-value">$40</td>
+          <td id="11-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('11-company2', 1)">+</button>
+            <button onclick="sellShare('11-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="11-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="11-company3-prev-value">$24</td>
+          <td id="11-company3-value">$23</td>
+          <td id="11-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('11-company3', 1)">+</button>
+            <button onclick="sellShare('11-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="11-company4-name">Travel Ease</td>
+          <td id="11-company4-prev-value">$23</td>
+          <td id="11-company4-value">$22</td>
+          <td id="11-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('11-company4', 1)">+</button>
+            <button onclick="sellShare('11-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="11-company5-name">WebNet Systems(WNS)</td>
+          <td id="11-company5-prev-value">$0</td>
+          <td id="11-company5-value">$0</td>
+          <td id="11-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('11-company5', 1)">+</button>
+            <button onclick="sellShare('11-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(11)">Submit</button>
+  </div>
+
+  <div id=12 style="display: none;">
+    <p class="section">February-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="12-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="12-company1-prev-value">$55</td>
+          <td id="12-company1-value">$38</td>
+          <td id="12-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('12-company1', 1)">+</button>
+            <button onclick="sellShare('12-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="12-company2-name">Reliable Industries(RI)</td>
+          <td id="12-company2-prev-value">$40</td>
+          <td id="12-company2-value">$41</td>
+          <td id="12-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('12-company2', 1)">+</button>
+            <button onclick="sellShare('12-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="12-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="12-company3-prev-value">$23</td>
+          <td id="12-company3-value">$22</td>
+          <td id="12-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('12-company3', 1)">+</button>
+            <button onclick="sellShare('12-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="12-company4-name">Travel Ease</td>
+          <td id="12-company4-prev-value">$22</td>
+          <td id="12-company4-value">$21</td>
+          <td id="12-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('12-company4', 1)">+</button>
+            <button onclick="sellShare('12-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="12-company5-name">WebNet Systems(WNS)</td>
+          <td id="12-company5-prev-value">$0</td>
+          <td id="12-company5-value">$0</td>
+          <td id="12-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('12-company5', 1)">+</button>
+            <button onclick="sellShare('12-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(12)">Submit</button>
+  </div>
+
+  <div id=13 style="display: none;">
+    <p class="section">March-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="13-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="13-company1-prev-value">$38</td>
+          <td id="13-company1-value">$25</td>
+          <td id="13-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('13-company1', 1)">+</button>
+            <button onclick="sellShare('13-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="13-company2-name">Reliable Industries(RI)</td>
+          <td id="13-company2-prev-value">$41</td>
+          <td id="13-company2-value">$42</td>
+          <td id="13-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('13-company2', 1)">+</button>
+            <button onclick="sellShare('13-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="13-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="13-company3-prev-value">$22</td>
+          <td id="13-company3-value">$21</td>
+          <td id="13-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('13-company3', 1)">+</button>
+            <button onclick="sellShare('13-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="13-company4-name">Travel Ease</td>
+          <td id="13-company4-prev-value">$21</td>
+          <td id="13-company4-value">$20</td>
+          <td id="13-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('13-company4', 1)">+</button>
+            <button onclick="sellShare('13-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="13-company5-name">WebNet Systems(WNS)</td>
+          <td id="13-company5-prev-value">$0</td>
+          <td id="13-company5-value">$0</td>
+          <td id="13-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('13-company5', 1)">+</button>
+            <button onclick="sellShare('13-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(13)">Submit</button>
+  </div>
+
+  <div id=14 style="display: none;">
+    <p class="section">April-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="14-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="14-company1-prev-value">$25</td>
+          <td id="14-company1-value">$20</td>
+          <td id="14-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('14-company1', 1)">+</button>
+            <button onclick="sellShare('14-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="14-company2-name">Reliable Industries(RI)</td>
+          <td id="14-company2-prev-value">$42</td>
+          <td id="14-company2-value">$42</td>
+          <td id="14-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('14-company2', 1)">+</button>
+            <button onclick="sellShare('14-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="14-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="14-company3-prev-value">$21</td>
+          <td id="14-company3-value">$20</td>
+          <td id="14-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('14-company3', 1)">+</button>
+            <button onclick="sellShare('14-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="14-company4-name">Travel Ease</td>
+          <td id="14-company4-prev-value">$20</td>
+          <td id="14-company4-value">$19</td>
+          <td id="14-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('14-company4', 1)">+</button>
+            <button onclick="sellShare('14-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="14-company5-name">WebNet Systems(WNS)</td>
+          <td id="14-company5-prev-value">$0</td>
+          <td id="14-company5-value">$0</td>
+          <td id="14-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('14-company5', 1)">+</button>
+            <button onclick="sellShare('14-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(14)">Submit</button>
+  </div>
+  <div id=15 style="display: none;">
+    <p class="section">May-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="15-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="15-company1-prev-value">$20</td>
+          <td id="15-company1-value">$18</td>
+          <td id="15-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('15-company1', 1)">+</button>
+            <button onclick="sellShare('15-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="15-company2-name">Reliable Industries(RI)</td>
+          <td id="15-company2-prev-value">$42</td>
+          <td id="15-company2-value">$43</td>
+          <td id="15-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('15-company2', 1)">+</button>
+            <button onclick="sellShare('15-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="15-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="15-company3-prev-value">$20</td>
+          <td id="15-company3-value">$21</td>
+          <td id="15-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('15-company3', 1)">+</button>
+            <button onclick="sellShare('15-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="15-company4-name">Travel Ease</td>
+          <td id="15-company4-prev-value">$19</td>
+          <td id="15-company4-value">$18</td>
+          <td id="15-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('15-company4', 1)">+</button>
+            <button onclick="sellShare('15-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="15-company5-name">WebNet Systems(WNS)</td>
+          <td id="15-company5-prev-value">$0</td>
+          <td id="15-company5-value">$0</td>
+          <td id="15-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('15-company5', 1)">+</button>
+            <button onclick="sellShare('15-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(15)">Submit</button>
+  </div>
+
+  <div id=16 style="display: none;">
+    <p class="section">June-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="16-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="16-company1-prev-value">$18</td>
+          <td id="16-company1-value">$16</td>
+          <td id="16-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('16-company1', 1)">+</button>
+            <button onclick="sellShare('16-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="16-company2-name">Reliable Industries(RI)</td>
+          <td id="16-company2-prev-value">$43</td>
+          <td id="16-company2-value">$44</td>
+          <td id="16-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('16-company2', 1)">+</button>
+            <button onclick="sellShare('16-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="16-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="16-company3-prev-value">$21</td>
+          <td id="16-company3-value">$22</td>
+          <td id="16-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('16-company3', 1)">+</button>
+            <button onclick="sellShare('16-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="16-company4-name">Travel Ease</td>
+          <td id="16-company4-prev-value">$18</td>
+          <td id="16-company4-value">$17</td>
+          <td id="16-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('16-company4', 1)">+</button>
+            <button onclick="sellShare('16-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="16-company5-name">WebNet Systems(WNS)</td>
+          <td id="16-company5-prev-value">$0</td>
+          <td id="16-company5-value">$0</td>
+          <td id="16-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('16-company5', 1)">+</button>
+            <button onclick="sellShare('16-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(16)">Submit</button>
+  </div>
+
+  <div id=17 style="display: none;">
+    <p class="section">July-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="17-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="17-company1-prev-value">$16</td>
+          <td id="17-company1-value">$15</td>
+          <td id="17-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('17-company1', 1)">+</button>
+            <button onclick="sellShare('17-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="17-company2-name">Reliable Industries(RI)</td>
+          <td id="17-company2-prev-value">$44</td>
+          <td id="17-company2-value">$45</td>
+          <td id="17-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('17-company2', 1)">+</button>
+            <button onclick="sellShare('17-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="17-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="17-company3-prev-value">$22</td>
+          <td id="17-company3-value">$23</td>
+          <td id="17-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('17-company3', 1)">+</button>
+            <button onclick="sellShare('17-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="17-company4-name">Travel Ease</td>
+          <td id="17-company4-prev-value">$17</td>
+          <td id="17-company4-value">$16</td>
+          <td id="17-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('17-company4', 1)">+</button>
+            <button onclick="sellShare('17-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="17-company5-name">WebNet Systems(WNS)</td>
+          <td id="17-company5-prev-value">$0</td>
+          <td id="17-company5-value">$0</td>
+          <td id="17-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('17-company5', 1)">+</button>
+            <button onclick="sellShare('17-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(17)">Submit</button>
+  </div>
+
+  <div id=18 style="display: none;">
+    <p class="section">August-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="18-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="18-company1-prev-value">$15</td>
+          <td id="18-company1-value">$14</td>
+          <td id="18-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('18-company1', 1)">+</button>
+            <button onclick="sellShare('18-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="18-company2-name">Reliable Industries(RI)</td>
+          <td id="18-company2-prev-value">$45</td>
+          <td id="18-company2-value">$46</td>
+          <td id="18-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('18-company2', 1)">+</button>
+            <button onclick="sellShare('18-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="18-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="18-company3-prev-value">$23</td>
+          <td id="18-company3-value">$22</td>
+          <td id="18-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('18-company3', 1)">+</button>
+            <button onclick="sellShare('18-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="18-company4-name">Travel Ease</td>
+          <td id="18-company4-prev-value">$16</td>
+          <td id="18-company4-value">$15</td>
+          <td id="18-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('18-company4', 1)">+</button>
+            <button onclick="sellShare('18-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="18-company5-name">WebNet Systems(WNS)</td>
+          <td id="18-company5-prev-value">$0</td>
+          <td id="18-company5-value">$0</td>
+          <td id="18-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('18-company5', 1)">+</button>
+            <button onclick="sellShare('18-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(18)">Submit</button>
+  </div>
+
+  <div id=19 style="display: none;">
+    <p class="section">September-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="19-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="19-company1-prev-value">$14</td>
+          <td id="19-company1-value">$12</td>
+          <td id="19-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('19-company1', 1)">+</button>
+            <button onclick="sellShare('19-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="19-company2-name">Reliable Industries(RI)</td>
+          <td id="19-company2-prev-value">$46</td>
+          <td id="19-company2-value">$47</td>
+          <td id="19-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('19-company2', 1)">+</button>
+            <button onclick="sellShare('19-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="19-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="19-company3-prev-value">$22</td>
+          <td id="19-company3-value">$21</td>
+          <td id="19-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('19-company3', 1)">+</button>
+            <button onclick="sellShare('19-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="19-company4-name">Travel Ease</td>
+          <td id="19-company4-prev-value">$15</td>
+          <td id="19-company4-value">$14</td>
+          <td id="19-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('19-company4', 1)">+</button>
+            <button onclick="sellShare('19-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="19-company5-name">WebNet Systems(WNS)</td>
+          <td id="19-company5-prev-value">$0</td>
+          <td id="19-company5-value">$0</td>
+          <td id="19-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('19-company5', 1)">+</button>
+            <button onclick="sellShare('19-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(19)">Submit</button>
+  </div>
+
+  <div id=20 style="display: none;">
+    <p class="section">October-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="20-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="20-company1-prev-value">$12</td>
+          <td id="20-company1-value">$10</td>
+          <td id="20-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('20-company1', 1)">+</button>
+            <button onclick="sellShare('20-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="20-company2-name">Reliable Industries(RI)</td>
+          <td id="20-company2-prev-value">$47</td>
+          <td id="20-company2-value">$48</td>
+          <td id="20-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('20-company2', 1)">+</button>
+            <button onclick="sellShare('20-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="20-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="20-company3-prev-value">$21</td>
+          <td id="20-company3-value">$20</td>
+          <td id="20-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('20-company3', 1)">+</button>
+            <button onclick="sellShare('20-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="20-company4-name">Travel Ease</td>
+          <td id="20-company4-prev-value">$14</td>
+          <td id="20-company4-value">$8</td>
+          <td id="20-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('20-company4', 1)">+</button>
+            <button onclick="sellShare('20-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="20-company5-name">WebNet Systems(WNS)</td>
+          <td id="20-company5-prev-value">$0</td>
+          <td id="20-company5-value">$0</td>
+          <td id="20-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('20-company5', 1)">+</button>
+            <button onclick="sellShare('20-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(20)">Submit</button>
+  </div>
+  <div id="21" style="display: none;">
+    <p class="section">November-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="21-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="21-company1-prev-value">$10</td>
+          <td id="21-company1-value">$8</td>
+          <td id="21-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('21-company1', 1)">+</button>
+            <button onclick="sellShare('21-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="21-company2-name">Reliable Industries(RI)</td>
+          <td id="21-company2-prev-value">$48</td>
+          <td id="21-company2-value">$49</td>
+          <td id="21-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('21-company2', 1)">+</button>
+            <button onclick="sellShare('21-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="21-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="21-company3-prev-value">$20</td>
+          <td id="21-company3-value">$19</td>
+          <td id="21-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('21-company3', 1)">+</button>
+            <button onclick="sellShare('21-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="21-company4-name">Travel Ease</td>
+          <td id="21-company4-prev-value">$8</td>
+          <td id="21-company4-value">$7</td>
+          <td id="21-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('21-company4', 1)">+</button>
+            <button onclick="sellShare('21-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="21-company5-name">WebNet Systems(WNS)</td>
+          <td id="21-company5-prev-value">$0</td>
+          <td id="21-company5-value">$0</td>
+          <td id="21-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('21-company5', 1)">+</button>
+            <button onclick="sellShare('21-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth('21')">Submit</button>
+  </div>
+
+  <div id="22" style="display: none;">
+    <p class="section">December-00</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="22-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="22-company1-prev-value">$8</td>
+          <td id="22-company1-value">$7</td>
+          <td id="22-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('22-company1', 1)">+</button>
+            <button onclick="sellShare('22-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="22-company2-name">Reliable Industries(RI)</td>
+          <td id="22-company2-prev-value">$49</td>
+          <td id="22-company2-value">$50</td>
+          <td id="22-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('22-company2', 1)">+</button>
+            <button onclick="sellShare('22-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="22-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="22-company3-prev-value">$19</td>
+          <td id="22-company3-value">$18</td>
+          <td id="22-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('22-company3', 1)">+</button>
+            <button onclick="sellShare('22-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="22-company4-name">Travel Ease</td>
+          <td id="22-company4-prev-value">$7</td>
+          <td id="22-company4-value">$6</td>
+          <td id="22-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('22-company4', 1)">+</button>
+            <button onclick="sellShare('22-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="22-company5-name">WebNet Systems(WNS)</td>
+          <td id="22-company5-prev-value">$0</td>
+          <td id="22-company5-value">$0</td>
+          <td id="22-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('22-company5', 1)">+</button>
+            <button onclick="sellShare('22-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth('22')">Submit</button>
+  </div>
+
+  <div id=23  style="display: none;">
+    <p class="section">January-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="23-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="23-company1-prev-value">$7</td>
+          <td id="23-company1-value">$6</td>
+          <td id="23-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('23-company1', 1)">+</button>
+            <button onclick="sellShare('23-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="23-company2-name">Reliable Industries(RI)</td>
+          <td id="23-company2-prev-value">$50</td>
+          <td id="23-company2-value">$51</td>
+          <td id="23-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('23-company2', 1)">+</button>
+            <button onclick="sellShare('23-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="23-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="23-company3-prev-value">$18</td>
+          <td id="23-company3-value">$17</td>
+          <td id="23-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('23-company3', 1)">+</button>
+            <button onclick="sellShare('23-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="23-company4-name">Travel Ease</td>
+          <td id="23-company4-prev-value">$6</td>
+          <td id="23-company4-value">$5</td>
+          <td id="23-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('23-company4', 1)">+</button>
+            <button onclick="sellShare('23-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="23-company5-name">WebNet Systems(WNS)</td>
+          <td id="23-company5-prev-value">$0</td>
+          <td id="23-company5-value">$0</td>
+          <td id="23-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('23-company5', 1)">+</button>
+            <button onclick="sellShare('23-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(23)">Submit</button>
+  </div>
+
+  <div id=24 style="display: none;">
+    <p class="section">February-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="24-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="24-company1-prev-value">$6</td>
+          <td id="24-company1-value">$5</td>
+          <td id="24-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('24-company1', 1)">+</button>
+            <button onclick="sellShare('24-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="24-company2-name">Reliable Industries(RI)</td>
+          <td id="24-company2-prev-value">$51</td>
+          <td id="24-company2-value">$52</td>
+          <td id="24-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('24-company2', 1)">+</button>
+            <button onclick="sellShare('24-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="24-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="24-company3-prev-value">$17</td>
+          <td id="24-company3-value">$16</td>
+          <td id="24-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('24-company3', 1)">+</button>
+            <button onclick="sellShare('24-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="24-company4-name">Travel Ease</td>
+          <td id="24-company4-prev-value">$5</td>
+          <td id="24-company4-value">$4</td>
+          <td id="24-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('24-company4', 1)">+</button>
+            <button onclick="sellShare('24-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="24-company5-name">WebNet Systems(WNS)</td>
+          <td id="24-company5-prev-value">$0</td>
+          <td id="24-company5-value">$0</td>
+          <td id="24-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('24-company5', 1)">+</button>
+            <button onclick="sellShare('24-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(24)">Submit</button>
+  </div>
+
+  <div id=25 style="display: none;">
+    <p class="section">March-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="25-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="25-company1-prev-value">$5</td>
+          <td id="25-company1-value">$4</td>
+          <td id="25-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('25-company1', 1)">+</button>
+            <button onclick="sellShare('25-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="25-company2-name">Reliable Industries(RI)</td>
+          <td id="25-company2-prev-value">$52</td>
+          <td id="25-company2-value">$53</td>
+          <td id="25-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('25-company2', 1)">+</button>
+            <button onclick="sellShare('25-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="25-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="25-company3-prev-value">$16</td>
+          <td id="25-company3-value">$15</td>
+          <td id="25-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('25-company3', 1)">+</button>
+            <button onclick="sellShare('25-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="25-company4-name">Travel Ease</td>
+          <td id="25-company4-prev-value">$4</td>
+          <td id="25-company4-value">$4</td>
+          <td id="25-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('25-company4', 1)">+</button>
+            <button onclick="sellShare('25-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="25-company5-name">WebNet Systems(WNS)</td>
+          <td id="25-company5-prev-value">$0</td>
+          <td id="25-company5-value">$0</td>
+          <td id="25-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('25-company5', 1)">+</button>
+            <button onclick="sellShare('25-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(25)">Submit</button>
+  </div>
+
+  <div id=26 style="display: none;">
+    <p class="section">April-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="26-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="26-company1-prev-value">$4</td>
+          <td id="26-company1-value">$3</td>
+          <td id="26-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('26-company1', 1)">+</button>
+            <button onclick="sellShare('26-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="26-company2-name">Reliable Industries(RI)</td>
+          <td id="26-company2-prev-value">$53</td>
+          <td id="26-company2-value">$54</td>
+          <td id="26-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('26-company2', 1)">+</button>
+            <button onclick="sellShare('26-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="26-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="26-company3-prev-value">$15</td>
+          <td id="26-company3-value">$14</td>
+          <td id="26-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('26-company3', 1)">+</button>
+            <button onclick="sellShare('26-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="26-company4-name">Travel Ease</td>
+          <td id="26-company4-prev-value">$4</td>
+          <td id="26-company4-value">$3</td>
+          <td id="26-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('26-company4', 1)">+</button>
+            <button onclick="sellShare('26-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="26-company5-name">WebNet Systems(WNS)</td>
+          <td id="26-company5-prev-value">$0</td>
+          <td id="26-company5-value">$0</td>
+          <td id="26-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('26-company5', 1)">+</button>
+            <button onclick="sellShare('26-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(26)">Submit</button>
+  </div>
+  <div id=27 style="display: none;">
+    <p class="section">May-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="27-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="27-company1-prev-value">$3</td>
+          <td id="27-company1-value">$3</td>
+          <td id="27-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('27-company1', 1)">+</button>
+            <button onclick="sellShare('27-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="27-company2-name">Reliable Industries(RI)</td>
+          <td id="27-company2-prev-value">$54</td>
+          <td id="27-company2-value">$55</td>
+          <td id="27-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('27-company2', 1)">+</button>
+            <button onclick="sellShare('27-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="27-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="27-company3-prev-value">$15</td>
+          <td id="27-company3-value">$13</td>
+          <td id="27-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('27-company3', 1)">+</button>
+            <button onclick="sellShare('27-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="27-company4-name">Travel Ease</td>
+          <td id="27-company4-prev-value">$3</td>
+          <td id="27-company4-value">$3</td>
+          <td id="27-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('27-company4', 1)">+</button>
+            <button onclick="sellShare('27-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="27-company5-name">WebNet Systems(WNS)</td>
+          <td id="27-company5-prev-value">$0</td>
+          <td id="27-company5-value">$0</td>
+          <td id="27-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('27-company5', 1)">+</button>
+            <button onclick="sellShare('27-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(27)">Submit</button>
+  </div>
+
+  <div id=28 style="display: none;">
+    <p class="section">June-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="28-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="28-company1-prev-value">$3</td>
+          <td id="28-company1-value">$3</td>
+          <td id="28-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('28-company1', 1)">+</button>
+            <button onclick="sellShare('28-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="28-company2-name">Reliable Industries(RI)</td>
+          <td id="28-company2-prev-value">$55</td>
+          <td id="28-company2-value">$56</td>
+          <td id="28-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('28-company2', 1)">+</button>
+            <button onclick="sellShare('28-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="28-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="28-company3-prev-value">$13</td>
+          <td id="28-company3-value">$12</td>
+          <td id="28-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('28-company3', 1)">+</button>
+            <button onclick="sellShare('28-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="28-company4-name">Travel Ease</td>
+          <td id="28-company4-prev-value">$2</td>
+          <td id="28-company4-value">$2</td>
+          <td id="28-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('28-company4', 1)">+</button>
+            <button onclick="sellShare('28-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="28-company5-name">WebNet Systems(WNS)</td>
+          <td id="28-company5-prev-value">$0</td>
+          <td id="28-company5-value">$0</td>
+          <td id="28-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('28-company5', 1)">+</button>
+            <button onclick="sellShare('28-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(28)">Submit</button>
+  </div>
+
+  <div id=29 style="display: none;">
+    <p class="section">July-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="29-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="29-company1-prev-value">$3</td>
+          <td id="29-company1-value">$3</td>
+          <td id="29-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('29-company1', 1)">+</button>
+            <button onclick="sellShare('29-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="29-company2-name">Reliable Industries(RI)</td>
+          <td id="29-company2-prev-value">$56</td>
+          <td id="29-company2-value">$57</td>
+          <td id="29-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('29-company2', 1)">+</button>
+            <button onclick="sellShare('29-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="29-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="29-company3-prev-value">$12</td>
+          <td id="29-company3-value">$11</td>
+          <td id="29-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('29-company3', 1)">+</button>
+            <button onclick="sellShare('29-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="29-company4-name">Travel Ease</td>
+          <td id="29-company4-prev-value">$2</td>
+          <td id="29-company4-value">$2</td>
+          <td id="29-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('29-company4', 1)">+</button>
+            <button onclick="sellShare('29-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="29-company5-name">WebNet Systems(WNS)</td>
+          <td id="29-company5-prev-value">$0</td>
+          <td id="29-company5-value">$0</td>
+          <td id="29-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('29-company5', 1)">+</button>
+            <button onclick="sellShare('29-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(29)">Submit</button>
+  </div>
+
+  <div id="30" style="display: none;">
+    <p class="section">August-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="30-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="30-company1-prev-value">$3</td>
+          <td id="30-company1-value">$3</td>
+          <td id="30-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('30-company1', 1)">+</button>
+            <button onclick="sellShare('30-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="30-company2-name">Reliable Industries(RI)</td>
+          <td id="30-company2-prev-value">$57</td>
+          <td id="30-company2-value">$58</td>
+          <td id="30-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('30-company2', 1)">+</button>
+            <button onclick="sellShare('30-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="30-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="30-company3-prev-value">$11</td>
+          <td id="30-company3-value">$10</td>
+          <td id="30-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('30-company3', 1)">+</button>
+            <button onclick="sellShare('30-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="30-company4-name">Travel Ease</td>
+          <td id="30-company4-prev-value">$2</td>
+          <td id="30-company4-value">$2</td>
+          <td id="30-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('30-company4', 1)">+</button>
+            <button onclick="sellShare('30-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="30-company5-name">WebNet Systems(WNS)</td>
+          <td id="30-company5-prev-value">$0</td>
+          <td id="30-company5-value">$0</td>
+          <td id="30-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('30-company5', 1)">+</button>
+            <button onclick="sellShare('30-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(30)">Submit</button>
+  </div>
+
+  <div id=31 style="display: none;">
+    <p class="section">September-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="31-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="31-company1-prev-value">$3</td>
+          <td id="31-company1-value">$2</td>
+          <td id="31-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('31-company1', 1)">+</button>
+            <button onclick="sellShare('31-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="31-company2-name">Reliable Industries(RI)</td>
+          <td id="31-company2-prev-value">$58</td>
+          <td id="31-company2-value">$59</td>
+          <td id="31-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('31-company2', 1)">+</button>
+            <button onclick="sellShare('31-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="31-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="31-company3-prev-value">$10</td>
+          <td id="31-company3-value">$9</td>
+          <td id="31-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('31-company3', 1)">+</button>
+            <button onclick="sellShare('31-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="31-company4-name">Travel Ease</td>
+          <td id="31-company4-prev-value">$2</td>
+          <td id="31-company4-value">$1</td>
+          <td id="31-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('31-company4', 1)">+</button>
+            <button onclick="sellShare('31-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="31-company5-name">WebNet Systems(WNS)</td>
+          <td id="31-company5-prev-value">$0</td>
+          <td id="31-company5-value">$0</td>
+          <td id="31-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('31-company5', 1)">+</button>
+            <button onclick="sellShare('31-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(31)">Submit</button>
+  </div>
+
+  <div id=32 style="display: none;">
+    <p class="section">October-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="32-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="32-company1-prev-value">$2</td>
+          <td id="32-company1-value">$1</td>
+          <td id="32-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('32-company1', 1)">+</button>
+            <button onclick="sellShare('32-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="32-company2-name">Reliable Industries(RI)</td>
+          <td id="32-company2-prev-value">$59</td>
+          <td id="32-company2-value">$60</td>
+          <td id="32-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('32-company2', 1)">+</button>
+            <button onclick="sellShare('32-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="32-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="32-company3-prev-value">$9</td>
+          <td id="32-company3-value">$8</td>
+          <td id="32-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('32-company3', 1)">+</button>
+            <button onclick="sellShare('32-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="32-company4-name">Travel Ease</td>
+          <td id="32-company4-prev-value">$1</td>
+          <td id="32-company4-value">$1</td>
+          <td id="32-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('32-company4', 1)">+</button>
+            <button onclick="sellShare('32-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="32-company5-name">WebNet Systems(WNS)</td>
+          <td id="32-company5-prev-value">$0</td>
+          <td id="32-company5-value">$0</td>
+          <td id="32-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('32-company5', 1)">+</button>
+            <button onclick="sellShare('32-company5', 1)">-</button>
+          </td>
+        </tr>
+      
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(32)">Submit</button>
+  </div>
+
+
+  <div id=33 style="display: none;">
+    <p class="section">November-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="33-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="33-company1-prev-value">$1</td>
+          <td id="33-company1-value">$1</td>
+          <td id="33-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('33-company1', 1)">+</button>
+            <button onclick="sellShare('33-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="33-company2-name">Reliable Industries(RI)</td>
+          <td id="33-company2-prev-value">$60</td>
+          <td id="33-company2-value">$61</td>
+          <td id="33-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('33-company2', 1)">+</button>
+            <button onclick="sellShare('33-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="33-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="33-company3-prev-value">$8</td>
+          <td id="33-company3-value">$7</td>
+          <td id="33-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('33-company3', 1)">+</button>
+            <button onclick="sellShare('33-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="33-company4-name">Travel Ease</td>
+          <td id="33-company4-prev-value">$1</td>
+          <td id="33-company4-value">$1</td>
+          <td id="33-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('33-company4', 1)">+</button>
+            <button onclick="sellShare('33-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="33-company5-name">WebNet Systems(WNS)</td>
+          <td id="33-company5-prev-value">$0</td>
+          <td id="33-company5-value">$0</td>
+          <td id="33-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('33-company5', 1)">+</button>
+            <button onclick="sellShare('33-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(33)">Submit</button>
+  </div>
+
+  <div id=34 style="display: none;">
+    <p class="section">December-01</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="34-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="34-company1-prev-value">$1</td>
+          <td id="34-company1-value">$1</td>
+          <td id="34-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('34-company1', 1)">+</button>
+            <button onclick="sellShare('34-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="34-company2-name">Reliable Industries(RI)</td>
+          <td id="34-company2-prev-value">$61</td>
+          <td id="34-company2-value">$62</td>
+          <td id="34-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('34-company2', 1)">+</button>
+            <button onclick="sellShare('34-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="34-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="34-company3-prev-value">$7</td>
+          <td id="34-company3-value">$6</td>
+          <td id="34-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('34-company3', 1)">+</button>
+            <button onclick="sellShare('34-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="34-company4-name">Travel Ease</td>
+          <td id="34-company4-prev-value">$1</td>
+          <td id="34-company4-value">$1</td>
+          <td id="34-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('34-company4', 1)">+</button>
+            <button onclick="sellShare('34-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="34-company5-name">WebNet Systems(WNS)</td>
+          <td id="34-company5-prev-value">$0</td>
+          <td id="34-company5-value">$0</td>
+          <td id="34-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('34-company5', 1)">+</button>
+            <button onclick="sellShare('34-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(34)">Submit</button>
+  </div>
+  <div id=35  style="display: none;">
+    <p class="section">January-02</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="35-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="35-company1-prev-value">$1</td>
+          <td id="35-company1-value">$1</td>
+          <td id="35-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('35-company1', 1)">+</button>
+            <button onclick="sellShare('35-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="35-company2-name">Reliable Industries(RI)</td>
+          <td id="35-company2-prev-value">$62</td>
+          <td id="35-company2-value">$63</td>
+          <td id="35-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('35-company2', 1)">+</button>
+            <button onclick="sellShare('35-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="35-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="35-company3-prev-value">$6</td>
+          <td id="35-company3-value">$5</td>
+          <td id="35-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('35-company3', 1)">+</button>
+            <button onclick="sellShare('35-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="35-company4-name">Travel Ease</td>
+          <td id="35-company4-prev-value">$1</td>
+          <td id="35-company4-value">$0</td>
+          <td id="35-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('35-company4', 1)">+</button>
+            <button onclick="sellShare('35-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="35-company5-name">WebNet Systems(WNS)</td>
+          <td id="35-company5-prev-value">$0</td>
+          <td id="35-company5-value">$0</td>
+          <td id="35-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('35-company5', 1)">+</button>
+            <button onclick="sellShare('35-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(35)">Submit</button>
+  </div>
+
+  <div id=36 style="display: none;">
+    <p class="section">February-02</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Previous Month Share Value</th>
+          <th>Current Share Value</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="36-company1-name">Tech Boom Industries(TBI)</td>
+          <td id="36-company1-prev-value">$30</td>
+          <td id="36-company1-value">$1</td>
+          <td id="36-company1-quantity">0</td>
+          <td>
+            <button onclick="buyShare('36-company1', 1)">+</button>
+            <button onclick="sellShare('36-company1', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="36-company2-name">Reliable Industries(RI)</td>
+          <td id="36-company2-prev-value">$63</td>
+          <td id="36-company2-value">$64</td>
+          <td id="36-company2-quantity">0</td>
+          <td>
+            <button onclick="buyShare('36-company2', 1)">+</button>
+            <button onclick="sellShare('36-company2', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="36-company3-name">Green Tech Solutions(GTS)</td>
+          <td id="36-company3-prev-value">$5</td>
+          <td id="36-company3-value">$4</td>
+          <td id="36-company3-quantity">0</td>
+          <td>
+            <button onclick="buyShare('36-company3', 1)">+</button>
+            <button onclick="sellShare('36-company3', 1)">-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="36-company4-name">Travel Ease</td>
+          <td id="36-company4-prev-value">$0</td>
+          <td id="36-company4-value">$0</td>
+          <td id="36-company4-quantity">0</td>
+          <td>
+            <button onclick="buyShare('36-company4', 1)">+</button>
+            <button onclick="sellShare('36-company4', 1)">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="36-company5-name">WebNet Systems(WNS)</td>
+          <td id="36-company5-prev-value">$0</td>
+          <td id="36-company5-value">$0</td>
+          <td id="36-company5-quantity">0</td>
+          <td>
+            <button onclick="buyShare('36-company5', 1)">+</button>
+            <button onclick="sellShare('36-company5', 1)">-</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="submit-button" onclick="submitMonth(36)">Submit</button>
+  </div>
+
+  <div id=37 style="display: none;" class="image-container">
+    <img src="TQ.png" alt="Thank you Image">
+  </div>
+      <!-- Add more month sections as needed -->
+    
+    </main>
+    
+    <script>
+
+     /* // Check if the website has been loaded before
+      function hasWebsiteLoadedBefore() {
+    return localStorage.getItem('websiteLoaded') === 'true';
+}
+
+// Set the flag indicating that the website has been loaded
+function setWebsiteLoadedFlag() {
+    localStorage.setItem('websiteLoaded', 'true');
+}
+
+// Function to restrict website loading
+function restrictWebsiteLoading() {
+    if (hasWebsiteLoadedBefore()) {
+        // Website has already been loaded, prevent loading
+        document.body.innerHTML = ''; // Clear the body content
+        alert('You have already visited this website.');
+    } else {
+        // Website is loading for the first time, set the flag
+        setWebsiteLoadedFlag();
+    }
+}
+
+// Call the function to restrict website loading
+restrictWebsiteLoading();*/
+
+      // Function to buy shares
+      function buyShare(companyId, price) {
+    var quantityElement = document.getElementById(companyId + '-quantity');
+    var moneyLeftElement = document.getElementById('money-left');
+    var currentPrice = parseFloat(document.getElementById(companyId + '-value').innerText.slice(1));
+    
+    var currentQuantity = parseInt(quantityElement.innerText);
+    var currentMoneyLeft = parseFloat(moneyLeftElement.innerText.split('$')[1]);
+    
+    if (currentMoneyLeft >= currentPrice) {
+      quantityElement.innerText = currentQuantity + 1;
+      moneyLeftElement.innerText = '$' + (currentMoneyLeft - currentPrice);
+    } else {
+      alert('Not enough money to buy shares!');
+    } }
+      
+      // Function to sell shares
+      function sellShare(companyId, price) {
+        var quantityElement = document.getElementById(companyId + '-quantity');
+        var moneyLeftElement = document.getElementById('money-left');
+        var currentPrice = parseFloat(document.getElementById(companyId + '-value').innerText.slice(1));
+
+        var currentQuantity = parseInt(quantityElement.innerText);
+        var currentMoneyLeft = parseFloat(moneyLeftElement.innerText.split('$')[1]);
+        
+        if (currentQuantity > 0) {
+          quantityElement.innerText = currentQuantity - 1;
+          moneyLeftElement.innerText = '$' + (currentMoneyLeft + currentPrice);
+        } else {
+          alert('No shares to sell!');
+        }
+      }
+    
+      // Function to submit month
+      
+        function submitMonth(id) {
+          let currentDivIndex = parseInt(id);
+
+// Function to show the next div and hide the current one
+function showNextDiv() {
+    // Hide the current div
+    document.getElementById(currentDivIndex).style.display = 'none';
+    // Increment currentDivIndex to move to the next div
+    currentDivIndex++;
+    // If the next div exists, show it
+    const nextDiv = document.getElementById(currentDivIndex);
+    if (nextDiv) {
+        nextDiv.style.display = 'block';
+        // Initialize share quantities in the next table
+        initializeNextTableShares(currentDivIndex);
+    }
+}
+
+function initializeNextTableShares(currentDivIndex) {
+    const previousMonthId = currentDivIndex - 1;
+    const currentMonthId = currentDivIndex;
+    for (let i = 1; i <= 5; i++) { // Assuming 3 companies (adjust as needed)
+        const previousQuantityElement = document.getElementById(previousMonthId + '-company' + i + '-quantity');
+        const currentQuantityElement = document.getElementById(currentMonthId + '-company' + i + '-quantity');
+        if (previousQuantityElement) {
+            currentQuantityElement.innerText = previousQuantityElement.innerText;
+        }
+    }
+}
+
+// Call showNextDiv directly since onclick is already handled in HTML
+showNextDiv();
+}
+    
+</script>
+</body>
+</html>

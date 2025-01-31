@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display&family=Roboto+Condensed&display=swap');
+body{
+    overflow-x: hidden;
+    background-color: black;
+}
+::-webkit-scrollbar {
+    width: 2em;
+}
+#navbar
+{
+    width: 1282px;
+    height: 140px;
+    background-color: black;
+    color:antiquewhite;
+    margin-left: -10px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+#container
+{
+    display: flex;
+    align-items: center;
+}
+#img1
+{
+    display: inline;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    margin-top: -70px;
+    margin-left: 800px;
+   
+}
+li a{
+    display: block;
+    font-size:x-large;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#new
+{
+    background-color: green;
+}
+
+#Title
+{
+    display: inline;
+    vertical-align: middle;
+    margin-top: 50px;
+    font-family: 'DM Sans',sans-serif;
+}
+
+#about
+{
+    margin-top: 100;
+}
+
+h3
+{
+    color: azure;
+    font-size:xx-large;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+p
+{
+    text-align: center;
+    font-weight: lighter;
+    font-size: x-large;
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -10px;
+}
+#preview
+{
+   margin-left: 330px;
+   margin-right: 200px;
+   width: 600px;
+}
+
+.title{
+    font-family:'Times New Roman', Times, serif;
+    display: inline;
+    font-size: xx-large;
+    margin-top: -10px;
+}
+a
+{
+    color: azure;
+    text-decoration: none;
+}
+a:visited {
+    color: azure;
+    text-decoration: none;
+}
+a:hover
+{
+    background-color: azure;
+    color: black;
+}
+#FAQ
+{
+    width: 1282px;
+    height: 500px;
+    background-color: azure;
+    margin-top: 100px;
+    margin-left: 25px;
+}
+.faq
+{
+    margin-left: 15px;
+    text-align: center;
+    font-size: x-large;
+    color: black;
+    padding-top: 15px;
+}
+.faq1
+{
+    text-align: left;
+    color: black;
+    font-weight: 550;
+    margin-left: 30px;
+}
+.faq2
+{
+    text-align: left;
+    color: black;
+    margin-left: 30px;
+}
+.symbol
+{   
+    width: 50px;
+    height: 50px;
+    margin-left: 600px;
+    text-align: center;
+    border-radius: 50%;
+    border-color: black;
+    color: red;
+    border-style: groove;
+    margin-top: -20px;
+}
+h4{
+    font-family: 'DM Sans', sans-serif;
+    color:black;
+    font-size: larger;
+    margin-left: 15px;
+    text-align: left;
+}
+#l1
+{   
+    margin-left: -5px;
+    color: rgb(245, 3, 245);
+    
+}
+#l2
+{
+    color:blue;
+}
+#l3
+{
+    color: rgb(7, 247, 7);
+}
+#l4
+{
+    color:yellow;
+}
+#l5
+{
+    color: orange;
+}
+#l6
+{
+    color: red;
+}
+footer{
+    text-align: center;
+    margin-top: 70px;
+    font-weight: 500;
+}

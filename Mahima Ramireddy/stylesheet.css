@@ -1,0 +1,639 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+#loading {
+    background:  rgb(13, 14, 14) url('src/[GIF]\ Loading.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+body{
+    background-image: url('src/bg\(1\).jpeg');
+    background-size: 100%;
+    list-style: none;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+#french
+{
+    color: yellow;
+    margin-left: -100px;
+    margin-top: 150px;
+    
+}
+
+
+.wrapper .sidebar{
+    background:#00000000;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    padding: 30px 0;
+    transition: all 0.5s ease;
+    overflow-y: scroll;
+    
+    
+}
+.wrapper .sidebar::-webkit-scrollbar
+{
+    display: none;
+}
+.wrapper .sidebar{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 10px 30px;
+    /*border-bottom: 1px solid #10558d;*/
+    color: rgb(241, 237, 237);
+    font-size: 23px;
+    position:relative;
+    
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: black;
+
+    background:white;
+    /*border-right: 2px solid rgb(5, 68, 104);*/
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: black;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+body ::-webkit-scrollbar
+{
+    display: none;
+}
+#home
+{
+    margin-left: 500px;
+    margin-top: 100px;
+}
+#about
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #535353;
+    margin-right: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 150px;  
+    
+}
+p
+{
+    color: rgb(228, 228, 236);
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 320px;
+    margin-right: 100px;
+    line-height: 55px;
+}
+#education
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #535353;
+    margin-right: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 100px;
+}
+#achievements
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #535353;
+    margin-right: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 150px;  
+    
+}
+#list{
+
+    color: rgb(228, 228, 236);
+    font-size: 30px;
+    margin-top: 35px;
+    margin-left: 320px;
+    margin-right: 100px;
+    line-height: 55px;
+}
+#skills
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #535353;
+    margin-right: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 150px;  
+    
+}
+#tools
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #535353;
+    margin-right: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 150px;  
+}
+#address
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #535353;
+    margin-right: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 150px; 
+}
+#contact
+{
+    color: aliceblue;
+    margin-left: 310px;
+    background-color: #53535300;
+    margin-right: 310px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+    margin-top: 150px; 
+}
+.checked
+{
+    color: orange;
+}
+.half
+{
+    color: orange;
+}
+.unchecked
+{
+    color: orange;
+}
+.git
+{
+    color: red;
+    font-size: 70px;
+    text-transform: none;
+}
+.react
+{
+    color: aqua;
+    font-size: 70px;
+}
+.boot
+{
+    font-size: 70px;
+    color: rgb(169, 3, 247);
+}
+.github
+{
+    color: whitesmoke;
+    font-size: 70px;
+}
+.tool
+{
+    font-size: 50px;
+}
+.map
+{
+    margin-top: 50px;
+    margin-left: 370px;
+}
+.mail
+{
+    color: red;
+    margin-left:20px;
+    font-size: 50px;
+}
+.mail:hover
+{
+    color: whitesmoke;
+}
+.insta
+{
+    color: violet;
+    margin-left: 20px;
+    font-size: 50px;
+}
+.insta:hover{
+    color: white;
+}
+.githu
+{
+    color: whitesmoke;
+    margin-left: 20px;
+    font-size: 50px;
+
+}
+.githu:hover{
+  color:lightsalmon;
+}
+.linkedin
+{
+    color: rgb(1, 1, 250);
+    margin-left: 20px;
+    font-size: 50px;
+    
+}
+.linkedin:hover{
+    color:lightskyblue;
+}
+hr{
+    color: whitesmoke;
+    font-weight: 700;
+    margin-left: 310px;
+    margin-top: 35px;
+}
+footer
+{
+    margin-top: 50px;
+    margin-bottom: 5px;
+    color: whitesmoke;
+    text-align: center;
+}
+.up
+{
+    color: whitesmoke;
+    margin-right: 100px;
+    margin-left: 900px;
+    font-size: 50px;
+}
+.up:hover{
+   color:bisque;
+}
+.text{
+    visibility: visible;
+}
+
+@media  screen and (max-width:850px)
+{
+    body
+    {
+        background-size: 150%;
+        
+        
+    }
+    .wrapper .sidebar
+    {
+        width:100px;
+        height: 100%;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        margin-left:10px;
+        margin-right: 900px;
+        z-index: -99;
+    }
+    .wrapper .sidebar ul li a{
+        display: block;
+        padding: 5px 5px;
+        /*border-bottom: 1px solid #10558d;*/
+        color: rgb(241, 237, 237);
+        font-size: 23px;
+        position:relative;
+        z-index: -99;
+        
+    }
+    .wrapper .sidebar ul li a .icon{
+        color: #dee4ec;
+        width: 10px;
+        display: inline-block;
+        z-index: -99;
+    }
+    #home
+    {
+       margin-left: 203px;
+       margin-top: 20px;
+
+    }
+    #about
+    {
+        margin-left:110px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    p
+   {
+    color: rgb(228, 228, 236);
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 112px;
+    margin-right: 100px;
+    line-height: 30px;
+    width: fit-content;
+
+   }
+    
+    #education
+    {
+        margin-left:110px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+
+    #achievements
+    {
+        margin-left:110px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    #list{
+
+        color: rgb(228, 228, 236);
+        font-size: 16px;
+        margin-top: 5px;
+        margin-left: 112px;
+        margin-right: 100px;
+        line-height: 30px;
+        margin-right: 5px;
+    }
+    #skills
+    {
+        margin-left:110px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    #tools
+    {
+        margin-left:110px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    #address
+    {
+        margin-left:110px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    .map 
+    {
+        margin-left: 115px;
+        margin-right: 5px;
+        width: 600;
+        height: 500;
+
+    }
+
+    .mail
+{
+    color: red;
+    margin-left:-200px;
+    font-size: 50px;
+}
+.insta
+{
+    color: violet;
+    margin-left: 20px;
+    font-size: 50px;
+}
+.githu
+{
+    color: whitesmoke;
+    margin-left: 20px;
+    font-size: 50px;
+
+}
+.linkedin
+{
+    color: rgb(1, 1, 250);
+    margin-left: 20px;
+    font-size: 50px;
+    
+}
+.up
+{
+    color: whitesmoke;
+    margin-right:100px;
+    margin-left: 350px;
+    font-size: 50px;
+}
+.copyright
+{
+    margin-left: 200px;
+}
+
+
+    .text{
+        display:none;
+    }
+}
+@media  screen and (max-width:480px)
+{
+    body
+    {
+        background-size: 150%;
+        
+    }
+    #french
+{
+    color: yellow;
+    margin-left: 22px;
+    margin-top: 150px;
+    
+}
+    .wrapper .sidebar
+    {
+        width:0px;
+        height: 100%;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        margin-left:10px;
+        margin-right: 900px;
+        z-index: -99;
+    }
+    .wrapper .sidebar ul li a{
+        display: block;
+        padding: 5px 5px;
+        /*border-bottom: 1px solid #10558d;*/
+        color: rgb(241, 237, 237);
+        font-size: 23px;
+        position:relative;
+        z-index: -99;
+        
+    }
+    .wrapper .sidebar ul li a .icon{
+        color: #dee4ec;
+        width: 10px;
+        display: inline-block;
+        z-index: -99;
+    }
+    #home
+    {
+       margin-left: 3px;
+       margin-top: 20px;
+
+    }
+    #about
+    {
+        margin-left:10px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    p
+   {
+    color: rgb(228, 228, 236);
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 100px;
+    line-height: 30px;
+    width: fit-content;
+
+   }
+    
+    #education
+    {
+        margin-left:10px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+
+    #achievements
+    {
+        margin-left:10px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    #list{
+
+        color: rgb(228, 228, 236);
+        font-size: 16px;
+        margin-top: 5px;
+        margin-left: 12px;
+        margin-right: 100px;
+        line-height: 30px;
+        margin-right: 5px;
+    }
+    #skills
+    {
+        margin-left:10px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    #tools
+    {
+        margin-left:10px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    #address
+    {
+        margin-left:10px;
+        padding-top: 5px;
+        padding-bottom:5px;
+        padding-left:10px;
+        margin-right: 5px;
+    }
+    .map 
+    {
+        margin-left: 15px;
+        margin-right: 5px;
+        width: 300;
+        height: 300;
+
+    }
+
+    .mail
+{
+    color: red;
+    margin-left:-290px;
+    font-size: 50px;
+}
+.insta
+{
+    color: violet;
+    margin-left: 20px;
+    font-size: 50px;
+}
+.githu
+{
+    color: whitesmoke;
+    margin-left: 20px;
+    font-size: 50px;
+
+}
+.linkedin
+{
+    color: rgb(1, 1, 250);
+    margin-left: 20px;
+    font-size: 50px;
+    
+}
+.up
+{
+    color: whitesmoke;
+    margin-right:150px;
+    margin-left: 150px;
+    font-size: 50px;
+}
+.copyright
+{
+    margin-left: 30px;
+}
+
+
+    .text{
+        display:none;
+    }
+    
+}
+
+
+
